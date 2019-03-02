@@ -23,12 +23,14 @@ public class ControladorUsuario {
     RepoUsuario repoU;
 
     //1. guardar :save()
-    @PostMapping("/usuario")//Des
-    Estatus guardar(@RequestBody String json) throws Exception {
+    @PostMapping("/usuario")//Describimos el metodo que vamos a usar POST en este caso y la variante en nuestra URI
+    Estatus guardar(@RequestBody String json) throws Exception { //Declaramos un metodo que regresara un mensaje del tipo estatus, 
+                                                                 //como vamos a solicitar informacion al usuario mediante un JSON usamos
+                                                                 //@RequestBody en forma de String con el nombre json para reconocerlo
 
-        ObjectMapper maper = new ObjectMapper(); //Con esta clase des serializa
+        ObjectMapper maper = new ObjectMapper(); //Con esta clase des serializa la informacion que recibimos de la parte del front end, es decir nuestro json
         Usuario u = maper.readValue(json, Usuario.class); //Le pasamos el json y lo tiene que transformar a un objeto de la clase usuario
-        repoU.save(u);//Lo mandamos a guardar
+        repoU.save(u);//Lo mandamos a guardar con el metodo por defecto 
         Estatus e = new Estatus("Usuario Guardado", true); //si se ejecuta correctamente esta es la respueta a enviar
         return e;//Este es el response, lo genera siempre el backend 
     }
