@@ -1,0 +1,97 @@
+/*
+ENTIDADES (CLASES)
+    Declaramos la clase con los atributos necesarios de forma privada, necesitamos usar el decorador 
+    @Id en el atributo que deseamos para mostrar el identificador del objeto al momento de insertarlo 
+    en una base de datos, encapsulamos los atributos, creamos el constructor vacío por defecto y el 
+    método ToString(), todo esto es necesario para aplicar conceptos posteriores.
+
+REPOUSUARIO
+    Este repositorio no es más que una Java Interface, es necesario heredar la clase MongoRepository 
+    dentro vamos a poner la Clase a la que pertenece este repositorio y el tipo de dato de nuestro Id 
+    para la clase, previamente definido en la clase con @Id.
+
+    Si deseamos crear un “consulta” que no viene por defecto este es el lugar, como este es el repositorio 
+    para usuarios siempre comenzamos con List<Usuario> eso es necesario para adaptarse al formato JSON, 
+    le damos un nombre preferiblemente nos adaptamos al estilo de los nombres por defecto y dentro el tipo 
+    de dato y el nombre para ese dato que va a recibir para ser buscado). 
+
+    CONTROLADOR USUARIO (5 METODOS)
+    Para crear la clase controladora tomamos en cuenta lo siguiente:
+    1.	Estamos usando servicios REST, usamos el decorador @RestController
+    2.	Vamos a generar mapeados de una clase a un json @RequestMapping("/api")
+    3.	Realizamos una aplicación distribuida @CrossOrigin
+    
+    Todo esto va encima fuera del nombre de nuestra clase pues aplica para todo.
+    Por dentro comenzamos con el decorador @Autowired que nos ayudara a generar una semejanza a las consultas 
+    mas usadas en SQL de los métodos crud de forma automática.
+    Debajo inicializamos la interface previamente creada llamada RepoUsuario en este caso.
+
+    RepoUsuario repoU;
+
+    Debajo comenzamos a crear nuestros métodos, usaremos los tipos de request para generar los métodos CRUD.
+1.	Guardar 
+•	Comenzamos con el decorador de request en este caso @PostMapping(“/usuario”)
+•	Vamos a crear un método que regresará un objeto del tipo Estatus. Le damos el nombre de “guardar” y  como parámetros vamos a solicitar información al usuario desde el JSON por lo que usamos el decorador @RequestBody del tipo String que llamaremos json. Activamos las Excepciones. 
+Estatus guardar(@RequestBody String json) throws Exception
+•	Creamos un objeto de la clase ObjectMapper  ObjectMapper maper = new ObjectMapper();
+•	Creamos un del tipo usuario y haciendo uso del objeto anterior con el método readValue le pasamos el json que recibimos y la clase a la que deseamos convertirlo, en este caso quedaría  Usuario u = maper.readValue(json, Usuario.class);
+•	Después teniendo ya nuestro objeto vamos a guardarlo con los métodos predefinidos en nuestro repositorio repoU.save(u);
+•	Como vamos a mandar regresar un objeto del tipo Estatus, lo creamos con el mensaje de aceptación y del tipo true. Estatus e = new Estatus("Usuario Guardado", true);
+•	Finalizamos con el return de ese objeto creado. return e; 
+
+Ahora vamos a ver como se hace la prueba en POSTMAN
+Para hacer las pruebas debemos montar el servicio en netbeans, nos aseguramos del puerto en TomCat que para nuestro caso por 
+defecto se instala en el puerto 8080
+
+Primero definimos la URL a usar, 
+http://localhost:8080/api/usuario
+METODO = POST.
+
+Ahora para ingresar nuestro JSON de forma manual para agregar un alumno a la base de datos vamos a la sección “body”, 
+seleccionamos la opción “raw” y en su pestaña JSON.
+
+{
+ "id":99,
+ "nombre":"Archivaldo" 
+}
+ 
+SEND
+
+    2.	Leer todos  
+
+Primero definimos la URL a usar, 
+http://localhost:8080/api/usuario
+METODO = GET.
+Como vamos a recibir informacion de todo, no enviamos nada
+
+    3.	Leer uno solo
+
+Primero definimos la URL a usar, 
+http://localhost:8080/api/usuario/id
+sustituimos en el url el id que deseamos ver
+METODO = GET.
+Como vamos a recibir informacion de todo, no enviamos nada pues lo que queremos
+lo estamos enviando desde la url
+
+    4.	Update
+
+Primero definimos la URL a usar, 
+http://localhost:8080/api/usuario/
+METODO = PUT.
+Le enviamos en el json toda la informacion que queremos enviar
+{
+ "id":99,
+ "nombre":"Fahren",
+ "localizacion":null
+}
+
+4.	Update
+
+Primero definimos la URL a usar, 
+http://localhost:8080/api/usuario/id
+METODO = Delete.
+Nuevamente no enviamos nada en el json porque vamos a enviar la informacion a traves
+del URL.
+
+
+*/
