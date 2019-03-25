@@ -16,6 +16,6 @@ public class ControladorHola {
     
   @GetMapping("/{texto}")//Se usa el metodo Get de HTTP, junto al RestController, visualiza el lugar donde va a se consumido y lo traduce por medio de un lenguaje comodin que son los JSON
   public String holaMundo(@PathVariable String texto){
-      return texto;
+      return "Este es el texto enviado: "+ texto;
   }
 }
