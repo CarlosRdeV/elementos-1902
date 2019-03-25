@@ -2,6 +2,7 @@
 package org.unitec.elementos;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class ControladorHola {
     
-  @GetMapping("/")//Se usa el metodo Get de HTTP, junto al RestController, visualiza el lugar donde va a se consumido y lo traduce por medio de un lenguaje comodin que son los JSON
-  public String holaMundo(){
-  
-      return "Aquí podriamos montar el servicio web, unido a la misma base de datos\n solo necesitamos crear los usuarios y ya";
+  @GetMapping("/{texto}")//Se usa el metodo Get de HTTP, junto al RestController, visualiza el lugar donde va a se consumido y lo traduce por medio de un lenguaje comodin que son los JSON
+  public String holaMundo(@PathVariable String texto){
+      return texto;
   }
 }
