@@ -2,28 +2,28 @@ package org.unitec.elementos;
 
 public class Localizacion {
 
-    private long lat;
-    private long lon;
+    private double lat;
+    private double lon;
 
-    //Encapsulation
-    public long getLat() {
-        return lat;
-    }
-
-    public void setLat(long lat) {
-        this.lat = lat;
-    }
-
-    public long getLon() {
-        return lon;
-    }
-
-    public void setLon(long lon) {
-        this.lon = lon;
-    }
 
     //Constructor de defecto vacio
     public Localizacion() {
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
     }
 
 }
