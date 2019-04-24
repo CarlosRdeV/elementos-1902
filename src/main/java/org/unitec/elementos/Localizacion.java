@@ -25,5 +25,5 @@ public class Localizacion {
     public void setLon(double lon) {
         this.lon = lon;
     }
-
+    
 }
