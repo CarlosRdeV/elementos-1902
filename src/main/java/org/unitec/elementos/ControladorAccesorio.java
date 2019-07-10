@@ -63,5 +63,13 @@ public class ControladorAccesorio {
         Estatus e = new Estatus("Accesorio Borrado", true);
         return e;
     }
+    
+        //6. Buscar por descripcion
+    @GetMapping("/accesorio/descripcion/{descripcion}")
+    Accesorio buscarPorDescripcion(@PathVariable String descripcion) {
+        return repoAcce.findByDescripcion(descripcion).get(0);
+    }
+    
+    
  
 }
