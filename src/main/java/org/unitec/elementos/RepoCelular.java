@@ -9,5 +9,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author CarlosRdeV
  */
 public interface RepoCelular extends MongoRepository<Celular, Long>{
-     List<Usuario> findByNombre(String nombre);
+     List<Usuario> findByModelo(String nombre);
 }

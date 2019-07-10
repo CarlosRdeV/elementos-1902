@@ -4,6 +4,8 @@ package org.unitec.elementos;
 import org.springframework.data.annotation.Id;
 
 public class Celular {
+    
+    
     @Id
     private Long id;
     private String marca;
