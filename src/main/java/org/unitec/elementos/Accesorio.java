@@ -95,11 +95,6 @@ public class Accesorio {
 
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
-    }
-    
-    
-
-    
-    
+    }     
 }
 

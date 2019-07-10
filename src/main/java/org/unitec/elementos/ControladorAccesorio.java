@@ -62,7 +62,7 @@ public class ControladorAccesorio {
     }
     
     //6. Buscar por descripcion
-    @GetMapping("/accesorio/{descripcion}")
+    @GetMapping("/accesorio/descripcion/{descripcion}")
     Accesorio buscarPorDescripcion(@PathVariable String descripcion) {
         return repoAcce.findByDescripcion(descripcion);
     }
