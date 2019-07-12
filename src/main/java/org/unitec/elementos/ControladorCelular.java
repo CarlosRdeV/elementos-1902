@@ -72,4 +72,32 @@ public class ControladorCelular {
         return e;
     }
     
+    //NUEVO//
+    /*       
+    //Busqueda por Titulo
+    List<Celular> findByTitulo (String titulo);
+    */
+        //6. Buscar por modelo
+    @GetMapping("/celular/modelo/{modelo}")
+    List<Celular> buscarPorModelo(@PathVariable String modelo) {
+        return repoCel.findByModelo(modelo);
+    }
+        //7. Buscar por marca
+    @GetMapping("/celular/marca/{marca}")
+    List<Celular> buscarPorMarca(@PathVariable String marca) {
+        return repoCel.findByMarca(marca);
+    }
+    
+            //8. Buscar por ubicacion
+    @GetMapping("/celular/ubicacion/{ubicacion}")
+    List<Celular> buscarPorUbicacion(@PathVariable String ubicacion) {
+        return repoCel.findByUbicacion(ubicacion);
+    }
+    
+    //9. Buscar por Titulo
+    @GetMapping("/celular/titulo/{titulo}")
+    List<Celular> buscarPorTitulo(@PathVariable String titulo) {
+        return repoCel.findByTitulo(titulo);
+    }
+        
 }

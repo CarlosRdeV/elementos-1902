@@ -67,7 +67,4 @@ public class ControladorAccesorio {
         return repoAcce.findByDescripcion(descripcion);
     }
     
-   
-
- 
 }

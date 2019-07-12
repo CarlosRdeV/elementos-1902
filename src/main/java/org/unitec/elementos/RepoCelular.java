@@ -9,7 +9,15 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author CarlosRdeV
  */
 public interface RepoCelular extends MongoRepository<Celular, Long>{
-     List<Celular> findByModelo(String nombre);
+    //Agregar Busqueda por modelo
+    List<Celular> findByModelo(String modelo);     
+    //Agregar Busqueda por marca
+    List<Celular> findByMarca(String marca);
+    //Agregar Busqueda por Ubicacion
+    List<Celular> findByUbicacion(String ubicacion);
+    //Busqueda por Titulo
+    List<Celular> findByTitulo (String titulo);
+     
      
      /*
      https://carlosrdev1902.herokuapp.com/api/celular

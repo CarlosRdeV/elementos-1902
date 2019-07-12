@@ -4,31 +4,32 @@ package org.unitec.elementos;
 import org.springframework.data.annotation.Id;
 
 public class Celular {
-    
-    
+       
     @Id
     private Long id;
     private String marca;
     private String modelo;
     private String imei;
+    private String titulo;
     private Float precio;
     private String ubicacion;
-    
-    public Celular(Long id, String marca, String modelo, String imei, Float precio, String ubicacion) {
+
+    public Celular(Long id, String marca, String modelo, String imei, String titulo, Float precio, String ubicacion) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
         this.imei = imei;
+        this.titulo = titulo;
         this.precio = precio;
         this.ubicacion = ubicacion;
-    }
+    }    
 
     public Celular() {
     }
-    
+
     @Override
     public String toString() {
-        return "Celular{" + "id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", imei=" + imei + ", precio=" + precio + ", ubicacion=" + ubicacion + '}';
+        return "Celular{" + "id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", imei=" + imei + ", titulo=" + titulo + ", precio=" + precio + ", ubicacion=" + ubicacion + '}';
     }
 
     public Long getId() {
@@ -63,6 +64,14 @@ public class Celular {
         this.imei = imei;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public Float getPrecio() {
         return precio;
     }
@@ -78,6 +87,8 @@ public class Celular {
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
+    
+    
     
     
     

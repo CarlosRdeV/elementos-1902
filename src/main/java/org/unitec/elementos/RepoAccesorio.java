@@ -4,7 +4,16 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface RepoAccesorio extends MongoRepository<Accesorio, Long>{
+        //Busqueda por Descripcion
          Accesorio findByDescripcion(String descripcion);
+         
+         
+         
+         
+         
+         
+
+    
          
          /*
          https://carlosrdev1902.herokuapp.com/api/accesorio con post + json para agregar accesorio
