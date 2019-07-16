@@ -50,8 +50,11 @@ public class Articulo {
     private Float precio;
     //Accesorio o Celular
     private String tipo;
+    
+    //AGREGAR ESTADO / HABILITADO O DESHABILITADO
+    private Boolean estado;
 
-    public Articulo(String id, String marca, String modelo, String imei, String titulo, Float precio, String tipo) {
+    public Articulo(String id, String marca, String modelo, String imei, String titulo, Float precio, String tipo, Boolean estado) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -59,6 +62,7 @@ public class Articulo {
         this.titulo = titulo;
         this.precio = precio;
         this.tipo = tipo;
+        this.estado = estado;
     }
 
     public Articulo() {
@@ -66,7 +70,7 @@ public class Articulo {
 
     @Override
     public String toString() {
-        return "Articulo{" + "id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", imei=" + imei + ", titulo=" + titulo + ", precio=" + precio + ", tipo=" + tipo + '}';
+        return "Articulo{" + "id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", imei=" + imei + ", titulo=" + titulo + ", precio=" + precio + ", tipo=" + tipo + ", estado=" + estado + '}';
     }
 
     public String getId() {
@@ -124,5 +128,15 @@ public class Articulo {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
+    
     
 }
