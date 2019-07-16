@@ -5,12 +5,13 @@
  */
 package org.unitec.elementos;
 
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
  * @author CarlosRdeV
  */
-public interface RepoArticulo extends MongoRepository<Articulo,String> {
-    
+public interface RepoArticulo extends MongoRepository<Articulo,String>{
+        List<Articulo> findByTipo(String modelo);   
 }

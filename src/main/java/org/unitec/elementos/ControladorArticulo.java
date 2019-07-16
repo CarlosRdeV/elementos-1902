@@ -70,4 +70,10 @@ public class ControladorArticulo {
         Estatus e = new Estatus("Articulo Borrado", true);
         return e;
     }
+    
+    //6. Buscar por TIPO
+    @GetMapping("/buscar/tipo/{tipo}")
+    List<Articulo> buscarPorTipo(@PathVariable String tipo) {
+        return repoArti.findByTipo(tipo);
+    }
 }
