@@ -2,29 +2,31 @@ package org.unitec.elementos;
 
 import org.springframework.data.annotation.Id;
 
-
-public class Tienda {
+public class UsuarioCasven {
     
     @Id
     private String nombre;
     private String password;
+    //Tipo Tienda,Admin,Root
+    private String tipo;
     private String abreviacion;
     //Array de vendedores
     private String[] vendedores;
 
-    public Tienda(String nombre, String password, String abreviacion, String[] vendedores) {
+    @Override
+    public String toString() {
+        return "UsuarioCasven{" + "nombre=" + nombre + ", password=" + password + ", tipo=" + tipo + ", abreviacion=" + abreviacion + ", vendedores=" + vendedores + '}';
+    }
+
+    public UsuarioCasven(String nombre, String password, String tipo, String abreviacion, String[] vendedores) {
         this.nombre = nombre;
         this.password = password;
+        this.tipo = tipo;
         this.abreviacion = abreviacion;
         this.vendedores = vendedores;
     }
 
-    public Tienda() {
-    }
-
-    @Override
-    public String toString() {
-        return "Tienda{" + "nombre=" + nombre + ", password=" + password + ", abreviacion=" + abreviacion + ", vendedores=" + vendedores + '}';
+    public UsuarioCasven() {
     }
 
     public String getNombre() {
@@ -43,6 +45,14 @@ public class Tienda {
         this.password = password;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     public String getAbreviacion() {
         return abreviacion;
     }
@@ -58,5 +68,7 @@ public class Tienda {
     public void setVendedores(String[] vendedores) {
         this.vendedores = vendedores;
     }
+    
+    
     
 }

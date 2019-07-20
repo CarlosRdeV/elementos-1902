@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package org.unitec.elementos;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,52 +18,58 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ *
+ * @author CarlosRdeV
+ */
 @RestController
 @RequestMapping("/api/tienda")
 @CrossOrigin
-public class ControladorTienda {
-    
+public class ControladorUsuarioCasven {
+       
     @Autowired
-    RepoTienda repoTienda;
+    RepoUsuarioCasven repoU;
     
       //1.Guardar
     @PostMapping("/agregar")
     Estatus guardar(@RequestBody String json) throws Exception {
         ObjectMapper maper = new ObjectMapper();
-        Tienda t = maper.readValue(json, Tienda.class);
-        repoTienda.save(t);
-        Estatus e = new Estatus("Tienda Guardada", true);
+        UsuarioCasven u = maper.readValue(json, UsuarioCasven.class);
+        repoU.save(u);
+        Estatus e = new Estatus("Usuario Guardado", true);
         return e;
     }
 
     //2.Buscar todos
     @GetMapping("/buscartodos")
-    List<Tienda> buscarTodos() {
-        return repoTienda.findAll();
+    List<UsuarioCasven> buscarTodos() {
+        return repoU.findAll();
     }
 
     //3. Buscar por id
     @GetMapping("/buscar/{id}")
-    Tienda buscarPorId(@PathVariable String id) {
-        return repoTienda.findById(id).get();
+    UsuarioCasven buscarPorId(@PathVariable String id) {
+        return repoU.findById(id).get();
     }
 
     //4. Actualizar
     @PutMapping("/actualizar/{id}")
     Estatus actualizar(@RequestBody String json) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
-        Tienda t = mapper.readValue(json, Tienda.class);
-        repoTienda.save(t);
-        Estatus e = new Estatus("Tienda Actualizada", true);
+        UsuarioCasven u = mapper.readValue(json, UsuarioCasven.class);
+        repoU.save(u);
+        Estatus e = new Estatus("Usuario Actualizado", true);
         return e;
     }
 
     //5. Borrar por ID
     @DeleteMapping("/borrar/{id}")
     Estatus borrar(@PathVariable String id) {
-        repoTienda.deleteById(id);
-        Estatus e = new Estatus("Tienda Borrada", true);
+        repoU.deleteById(id);
+        Estatus e = new Estatus("Usuario Borrada", true);
         return e;
     }
 
+    
+    
 }
