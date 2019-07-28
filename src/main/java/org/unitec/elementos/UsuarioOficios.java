@@ -17,19 +17,26 @@ public class UsuarioOficios {
     private String oficio;
     private String direccion;
     private String telefono;
-    private Localizacion localizacion;
+    private double lat;
+    private double lon;
 
-    public UsuarioOficios(String email, String nombre, String password, String oficio, String direccion, String telefono, Localizacion localizacion) {
+    public UsuarioOficios(String email, String nombre, String password, String oficio, String direccion, String telefono, double lat, double lon) {
         this.email = email;
         this.nombre = nombre;
         this.password = password;
         this.oficio = oficio;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.localizacion = localizacion;
+        this.lat = lat;
+        this.lon = lon;
     }
 
     public UsuarioOficios() {
+    }
+
+    @Override
+    public String toString() {
+        return "UsuarioOficios{" + "email=" + email + ", nombre=" + nombre + ", password=" + password + ", oficio=" + oficio + ", direccion=" + direccion + ", telefono=" + telefono + ", lat=" + lat + ", lon=" + lon + '}';
     }
 
     public String getEmail() {
@@ -80,13 +87,22 @@ public class UsuarioOficios {
         this.telefono = telefono;
     }
 
-    public Localizacion getLocalizacion() {
-        return localizacion;
+    public double getLat() {
+        return lat;
     }
 
-    public void setLocalizacion(Localizacion localizacion) {
-        this.localizacion = localizacion;
+    public void setLat(double lat) {
+        this.lat = lat;
     }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
+    }
+
     
     
 }
