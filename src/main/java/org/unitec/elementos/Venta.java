@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 public class Venta {
     
     @Id
-    private Long id_venta;
+    private String id_venta;
     //AUTOINCREMENTAL
     private String id_articulo;
     //ID DE LA TABLA ARTICULO
@@ -18,13 +18,15 @@ public class Venta {
     //V191407BCR01
     private String vendedor;
     //VENDEDOR ASIGNADO A LA TIENDA  
+    private Double subtotal;
 
-    public Venta(Long id_venta, String id_articulo, int cantidad, String referencia, String vendedor) {
+    public Venta(String id_venta, String id_articulo, int cantidad, String referencia, String vendedor, Double subtotal) {
         this.id_venta = id_venta;
         this.id_articulo = id_articulo;
         this.cantidad = cantidad;
         this.referencia = referencia;
         this.vendedor = vendedor;
+        this.subtotal = subtotal;
     }
 
     public Venta() {
@@ -32,14 +34,14 @@ public class Venta {
 
     @Override
     public String toString() {
-        return "Venta{" + "id_venta=" + id_venta + ", id_articulo=" + id_articulo + ", cantidad=" + cantidad + ", referencia=" + referencia + ", vendedor=" + vendedor + '}';
+        return "Venta{" + "id_venta=" + id_venta + ", id_articulo=" + id_articulo + ", cantidad=" + cantidad + ", referencia=" + referencia + ", vendedor=" + vendedor + ", subtotal=" + subtotal + '}';
     }
 
-    public Long getId_venta() {
+    public String getId_venta() {
         return id_venta;
     }
 
-    public void setId_venta(Long id_venta) {
+    public void setId_venta(String id_venta) {
         this.id_venta = id_venta;
     }
 
@@ -74,6 +76,14 @@ public class Venta {
     public void setVendedor(String vendedor) {
         this.vendedor = vendedor;
     }
-    
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
+
     
 }

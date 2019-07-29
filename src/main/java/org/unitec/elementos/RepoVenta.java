@@ -11,6 +11,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author CarlosRdeV
  */
-public interface RepoVenta extends MongoRepository<Venta,Long>{
+public interface RepoVenta extends MongoRepository<Venta,String>{
     
 }

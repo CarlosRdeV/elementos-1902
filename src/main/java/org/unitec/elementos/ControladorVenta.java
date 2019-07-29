@@ -39,7 +39,7 @@ public class ControladorVenta {
 
     //3. Buscar por id
     @GetMapping("/buscar/{id}")
-    Venta buscarPorId(@PathVariable Long id) {
+    Venta buscarPorId(@PathVariable String id) {
         return repoVenta.findById(id).get();
     }
 
@@ -55,7 +55,7 @@ public class ControladorVenta {
 
     //5. Borrar por ID
     @DeleteMapping("/borrar/{id}")
-    Estatus borrar(@PathVariable Long id) {
+    Estatus borrar(@PathVariable String id) {
         repoVenta.deleteById(id);
         Estatus e = new Estatus("Venta Borrada", true);
         return e;
