@@ -62,4 +62,15 @@ public class ControladorServicioOficios {
         return e;
     }
     
+    //6. Buscar por email empleador
+    @GetMapping("/buscar/empleador/{email}")
+    List<ServicioOficios> buscarPorEmailEmpleador(@PathVariable String email) {
+        return repoSO.findByEmailEmpleador(email);
+    }
+    
+    //7. Buscar por email trajador
+    @GetMapping("/buscar/trabajador/{email}")
+    List<ServicioOficios> buscarPorEmailTrabajador(@PathVariable String email) {
+        return repoSO.findByEmailTrabajador(email);
+    }
 }
