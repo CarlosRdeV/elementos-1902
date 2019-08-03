@@ -5,14 +5,14 @@ import org.springframework.data.annotation.Id;
 public class Almacen {
 
     @Id
-    private String id_almacen;
-    private String id_articulo;
+    private String idAlmacen;
+    private String idArticulo;
     private Long cantidad;
     private String tienda;
 
-    public Almacen(String id_almacen, String id_articulo, Long cantidad, String tienda) {
-        this.id_almacen = id_almacen;
-        this.id_articulo = id_articulo;
+    public Almacen(String idAlmacen, String idArticulo, Long cantidad, String tienda) {
+        this.idAlmacen = idAlmacen;
+        this.idArticulo = idArticulo;
         this.cantidad = cantidad;
         this.tienda = tienda;
     }
@@ -22,23 +22,23 @@ public class Almacen {
 
     @Override
     public String toString() {
-        return "Almacen{" + "id_almacen=" + id_almacen + ", id_articulo=" + id_articulo + ", cantidad=" + cantidad + ", tienda=" + tienda + '}';
+        return "Almacen{" + "idAlmacen=" + idAlmacen + ", idArticulo=" + idArticulo + ", cantidad=" + cantidad + ", tienda=" + tienda + '}';
     }
 
-    public String getId_almacen() {
-        return id_almacen;
+    public String getIdAlmacen() {
+        return idAlmacen;
     }
 
-    public void setId_almacen(String id_almacen) {
-        this.id_almacen = id_almacen;
+    public void setIdAlmacen(String idAlmacen) {
+        this.idAlmacen = idAlmacen;
     }
 
-    public String getId_articulo() {
-        return id_articulo;
+    public String getIdArticulo() {
+        return idArticulo;
     }
 
-    public void setId_articulo(String id_articulo) {
-        this.id_articulo = id_articulo;
+    public void setIdArticulo(String idArticulo) {
+        this.idArticulo = idArticulo;
     }
 
     public Long getCantidad() {
@@ -57,5 +57,6 @@ public class Almacen {
         this.tienda = tienda;
     }
 
+ 
     
 }

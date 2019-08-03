@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface RepoAlmacen extends MongoRepository<Almacen, String>{
     
-        List<Almacen>findById_Articulo(String id_articulo);
+        List<Almacen>findByIdArticulo(String idArticulo);
 
     
    /*

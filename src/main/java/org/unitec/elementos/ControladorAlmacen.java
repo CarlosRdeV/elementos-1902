@@ -67,9 +67,9 @@ public class ControladorAlmacen {
         return e;
     }
     //6. Buscar por id_articulo
-    @GetMapping("/buscararticulo/{id_articulo}")
-    List<Almacen> buscarPorArticulo(@PathVariable String id_articulo){
-        return repoAlma.findById_Articulo(id_articulo);
+    @GetMapping("/buscararticulo/{idArticulo}")
+    List<Almacen> buscarPorArticulo(@PathVariable String idArticulo){
+        return repoAlma.findByIdArticulo(idArticulo);
     }
     
 }
