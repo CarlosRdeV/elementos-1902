@@ -72,4 +72,10 @@ public class ControladorAlmacen {
         return repoAlma.findByIdArticulo(idArticulo);
     }
     
+    //7. Buscar por id_articulo y tienda
+    @GetMapping("/buscararticulos/{idArticulo}/{tienda}")
+    List<Almacen> buscarPorArticuloAndTienda(@PathVariable String idArticulo, @PathVariable String tienda){
+        return repoAlma.findByIdArticuloAndTienda(idArticulo, tienda);
+    }
+    
 }
