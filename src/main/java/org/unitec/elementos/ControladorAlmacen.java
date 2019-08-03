@@ -69,7 +69,7 @@ public class ControladorAlmacen {
     
     //6. Buscar por id
     @GetMapping("/buscarexistencia/{articulo}/{tienda}")
-    Almacen buscAlmacen(@PathVariable String articulo,@PathVariable String tienda){
+    List<Almacen> buscarAlmacen(@PathVariable String articulo,@PathVariable String tienda){
         return repoAlma.findById_articuloAndTienda(articulo,tienda);
     }
     
