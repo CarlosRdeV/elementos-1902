@@ -7,10 +7,7 @@ package org.unitec.elementos;
 
 import org.springframework.data.annotation.Id;
 
-/**
- *
- * @author CarlosRdeV
- */
+
 public class Surtir {
     
     @Id
@@ -25,6 +22,8 @@ public class Surtir {
     private String referencia;
     //REFERENCIA BASADO EN LA FECHA Y AUTOINCREMENTAL
     //S19140701
+    
+    
 
     public Surtir(Long id_surtir, String id_articulo, int cantidad, String tienda, String referencia) {
         this.id_surtir = id_surtir;

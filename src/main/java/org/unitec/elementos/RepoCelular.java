@@ -17,6 +17,7 @@ public interface RepoCelular extends MongoRepository<Celular, Long>{
     List<Celular> findByUbicacion(String ubicacion);
     //Busqueda por Titulo
     List<Celular> findByTitulo (String titulo);
+    
      
      
      /*
