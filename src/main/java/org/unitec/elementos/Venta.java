@@ -16,28 +16,25 @@ public class Venta {
     private String referencia;
     //LA REFERENCIA DEPENDERA DE LA FECHA Y TIENDA
     //V191407BCR01
-    private String tienda;
-    //asdasdasd
     private String vendedor;
     //VENDEDOR ASIGNADO A LA TIENDA  
     private Double subtotal;
 
-    public Venta() {
-    }
-
-    public Venta(String id_venta, String id_articulo, int cantidad, String referencia, String tienda, String vendedor, Double subtotal) {
+    public Venta(String id_venta, String id_articulo, int cantidad, String referencia, String vendedor, Double subtotal) {
         this.id_venta = id_venta;
         this.id_articulo = id_articulo;
         this.cantidad = cantidad;
         this.referencia = referencia;
-        this.tienda = tienda;
         this.vendedor = vendedor;
         this.subtotal = subtotal;
     }
 
+    public Venta() {
+    }
+
     @Override
     public String toString() {
-        return "Venta{" + "id_venta=" + id_venta + ", id_articulo=" + id_articulo + ", cantidad=" + cantidad + ", referencia=" + referencia + ", tienda=" + tienda + ", vendedor=" + vendedor + ", subtotal=" + subtotal + '}';
+        return "Venta{" + "id_venta=" + id_venta + ", id_articulo=" + id_articulo + ", cantidad=" + cantidad + ", referencia=" + referencia + ", vendedor=" + vendedor + ", subtotal=" + subtotal + '}';
     }
 
     public String getId_venta() {
@@ -72,14 +69,6 @@ public class Venta {
         this.referencia = referencia;
     }
 
-    public String getTienda() {
-        return tienda;
-    }
-
-    public void setTienda(String tienda) {
-        this.tienda = tienda;
-    }
-
     public String getVendedor() {
         return vendedor;
     }
@@ -96,5 +85,6 @@ public class Venta {
         this.subtotal = subtotal;
     }
 
+    
     
 }
