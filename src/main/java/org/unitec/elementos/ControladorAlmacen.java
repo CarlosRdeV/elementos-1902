@@ -45,7 +45,7 @@ public class ControladorAlmacen {
 
     //3. Buscar por id
     @GetMapping("/buscar/{id}")
-    Almacen buscarPorId(@PathVariable Long id) {
+    Almacen buscarPorId(@PathVariable String id) {
         return repoAlma.findById(id).get();
     }
 
@@ -61,7 +61,7 @@ public class ControladorAlmacen {
 
     //5. Borrar por ID
     @DeleteMapping("/borrar/{id}")
-    Estatus borrar(@PathVariable Long id) {
+    Estatus borrar(@PathVariable String id){
         repoAlma.deleteById(id);
         Estatus e = new Estatus("Articulo en almacen Borrado", true);
         return e;
