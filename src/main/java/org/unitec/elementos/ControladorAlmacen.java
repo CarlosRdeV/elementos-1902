@@ -66,4 +66,11 @@ public class ControladorAlmacen {
         Estatus e = new Estatus("Articulo en almacen Borrado", true);
         return e;
     }
+    
+    //6. Buscar por id
+    @GetMapping("/buscarexistencia/{articulo}/{tienda}")
+    Almacen buscAlmacen(@PathVariable String articulo,@PathVariable String tienda){
+        return repoAlma.findById_articuloAndTienda(articulo,tienda);
+    }
+    
 }
