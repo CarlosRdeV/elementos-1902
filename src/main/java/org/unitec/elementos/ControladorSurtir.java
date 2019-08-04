@@ -44,7 +44,7 @@ public class ControladorSurtir {
 
     //3. Buscar por id
     @GetMapping("/buscar/{id}")
-    Surtir buscarPorId(@PathVariable Long id) {
+    Surtir buscarPorId(@PathVariable String id) {
         return repoSur.findById(id).get();
     }
 
@@ -60,7 +60,7 @@ public class ControladorSurtir {
 
     //5. Borrar por ID
     @DeleteMapping("/borrar/{id}")
-    Estatus borrar(@PathVariable Long id) {
+    Estatus borrar(@PathVariable String id) {
         repoSur.deleteById(id);
         Estatus e = new Estatus("Surtido Borrado", true);
         return e;

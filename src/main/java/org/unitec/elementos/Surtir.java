@@ -9,11 +9,11 @@ import org.springframework.data.annotation.Id;
 
 
 public class Surtir {
-    
+    //CAMBIAR EL NOMBRE Y TIPO A STRING
     @Id
-    private Long id_surtir;
+    private String idSurtir;
     //ID_SURTIR AUTOINCREMENTAL
-    private String id_articulo;
+    private String idArticulo;
     //DEPENDE DEL ID DEL ARTICULO
     private int cantidad;
     //NO NEGATIVOS
@@ -22,12 +22,10 @@ public class Surtir {
     private String referencia;
     //REFERENCIA BASADO EN LA FECHA Y AUTOINCREMENTAL
     //S19140701
-    
-    
 
-    public Surtir(Long id_surtir, String id_articulo, int cantidad, String tienda, String referencia) {
-        this.id_surtir = id_surtir;
-        this.id_articulo = id_articulo;
+    public Surtir(String idSurtir, String idArticulo, int cantidad, String tienda, String referencia) {
+        this.idSurtir = idSurtir;
+        this.idArticulo = idArticulo;
         this.cantidad = cantidad;
         this.tienda = tienda;
         this.referencia = referencia;
@@ -38,23 +36,23 @@ public class Surtir {
 
     @Override
     public String toString() {
-        return "Surtir{" + "id_surtir=" + id_surtir + ", id_articulo=" + id_articulo + ", cantidad=" + cantidad + ", tienda=" + tienda + ", referencia=" + referencia + '}';
+        return "Surtir{" + "idSurtir=" + idSurtir + ", idArticulo=" + idArticulo + ", cantidad=" + cantidad + ", tienda=" + tienda + ", referencia=" + referencia + '}';
     }
 
-    public Long getId_surtir() {
-        return id_surtir;
+    public String getIdSurtir() {
+        return idSurtir;
     }
 
-    public void setId_surtir(Long id_surtir) {
-        this.id_surtir = id_surtir;
+    public void setIdSurtir(String idSurtir) {
+        this.idSurtir = idSurtir;
     }
 
-    public String getId_articulo() {
-        return id_articulo;
+    public String getIdArticulo() {
+        return idArticulo;
     }
 
-    public void setId_articulo(String id_articulo) {
-        this.id_articulo = id_articulo;
+    public void setIdArticulo(String idArticulo) {
+        this.idArticulo = idArticulo;
     }
 
     public int getCantidad() {

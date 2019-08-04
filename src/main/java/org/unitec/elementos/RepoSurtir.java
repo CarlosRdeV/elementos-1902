@@ -11,6 +11,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author CarlosRdeV
  */
-public interface RepoSurtir extends MongoRepository<Surtir,Long>{
+public interface RepoSurtir extends MongoRepository<Surtir,String>{
     
 }

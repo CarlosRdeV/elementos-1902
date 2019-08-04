@@ -7,12 +7,14 @@ public class Almacen {
     @Id
     private String idAlmacen;
     private String idArticulo;
+    private String titulo;
     private Long cantidad;
     private String tienda;
 
-    public Almacen(String idAlmacen, String idArticulo, Long cantidad, String tienda) {
+    public Almacen(String idAlmacen, String idArticulo, String titulo, Long cantidad, String tienda) {
         this.idAlmacen = idAlmacen;
         this.idArticulo = idArticulo;
+        this.titulo = titulo;
         this.cantidad = cantidad;
         this.tienda = tienda;
     }
@@ -22,7 +24,7 @@ public class Almacen {
 
     @Override
     public String toString() {
-        return "Almacen{" + "idAlmacen=" + idAlmacen + ", idArticulo=" + idArticulo + ", cantidad=" + cantidad + ", tienda=" + tienda + '}';
+        return "Almacen{" + "idAlmacen=" + idAlmacen + ", idArticulo=" + idArticulo + ", titulo=" + titulo + ", cantidad=" + cantidad + ", tienda=" + tienda + '}';
     }
 
     public String getIdAlmacen() {
@@ -41,6 +43,14 @@ public class Almacen {
         this.idArticulo = idArticulo;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public Long getCantidad() {
         return cantidad;
     }
@@ -57,6 +67,5 @@ public class Almacen {
         this.tienda = tienda;
     }
 
- 
     
 }
