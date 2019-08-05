@@ -9,7 +9,11 @@ public interface RepoServicioOficios extends MongoRepository<ServicioOficios,Str
     
             List<ServicioOficios> findByEmailEmpleador(String emailEmpleador); 
             
-            List<ServicioOficios> findByEmailTrabajador(String emailTrabajador);  
+            List<ServicioOficios> findByEmailTrabajador(String emailTrabajador); 
+            
+            List<ServicioOficios>findByEmailTrabajadorAndEstatus(String emailTrabajador, String estatus);
+
+            
             
     
 }
