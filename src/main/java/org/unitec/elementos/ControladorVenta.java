@@ -60,4 +60,10 @@ public class ControladorVenta {
         Estatus e = new Estatus("Venta Borrada", true);
         return e;
     } 
+    
+    //6. Buscar por Referencia Like
+    @GetMapping("/buscar/reporte/{tienda}")
+    List<Venta> buscarReferenciaLike(@PathVariable String tienda){
+        return repoVenta.findByReferenciaLike(tienda);
+    }
 }
