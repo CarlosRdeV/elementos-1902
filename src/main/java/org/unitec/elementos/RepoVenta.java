@@ -5,6 +5,7 @@
  */
 package org.unitec.elementos;
 
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -12,5 +13,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author CarlosRdeV
  */
 public interface RepoVenta extends MongoRepository<Venta,String>{
-    
+    List<Venta> findByReferenciaLike(String referencia);
 }
