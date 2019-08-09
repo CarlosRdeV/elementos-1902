@@ -66,4 +66,10 @@ public class ControladorVenta {
     List<Venta> buscarReferenciaLike(@PathVariable String tienda){
         return repoVenta.findByReferenciaLike(tienda);
     }
+    
+        //7. Buscar por Tipo
+    @GetMapping("/buscar/tipo/{tipo}")
+    List<Venta> buscarTipo(@PathVariable String tipo){
+        return repoVenta.findByTipo(tipo);
+    }
 }

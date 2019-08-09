@@ -14,17 +14,23 @@ public class Venta {
     private int cantidad;
     //NO NEGATIVOS
     private String referencia;
+    
+    private String fecha;
+    
+    private String tipo;
     //LA REFERENCIA DEPENDERA DE LA FECHA Y TIENDA
     //V191407BCR01
     private String vendedor;
     //VENDEDOR ASIGNADO A LA TIENDA  
     private Double subtotal;
 
-    public Venta(String id_venta, String id_articulo, int cantidad, String referencia, String vendedor, Double subtotal) {
+    public Venta(String id_venta, String id_articulo, int cantidad, String referencia, String fecha, String tipo, String vendedor, Double subtotal) {
         this.id_venta = id_venta;
         this.id_articulo = id_articulo;
         this.cantidad = cantidad;
         this.referencia = referencia;
+        this.fecha = fecha;
+        this.tipo = tipo;
         this.vendedor = vendedor;
         this.subtotal = subtotal;
     }
@@ -34,7 +40,7 @@ public class Venta {
 
     @Override
     public String toString() {
-        return "Venta{" + "id_venta=" + id_venta + ", id_articulo=" + id_articulo + ", cantidad=" + cantidad + ", referencia=" + referencia + ", vendedor=" + vendedor + ", subtotal=" + subtotal + '}';
+        return "Venta{" + "id_venta=" + id_venta + ", id_articulo=" + id_articulo + ", cantidad=" + cantidad + ", referencia=" + referencia + ", fecha=" + fecha + ", tipo=" + tipo + ", vendedor=" + vendedor + ", subtotal=" + subtotal + '}';
     }
 
     public String getId_venta() {
@@ -67,6 +73,22 @@ public class Venta {
 
     public void setReferencia(String referencia) {
         this.referencia = referencia;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getVendedor() {

@@ -14,4 +14,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface RepoVenta extends MongoRepository<Venta,String>{
     List<Venta> findByReferenciaLike(String referencia);
+    
+    List<Venta> findByTipo(String tipo);
 }
