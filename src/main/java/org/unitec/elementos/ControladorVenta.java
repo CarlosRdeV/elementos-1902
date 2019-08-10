@@ -40,10 +40,7 @@ public class ControladorVenta {
     //3. Buscar por id
     @GetMapping("/buscar/{id}")
     Venta buscarPorId(@PathVariable String id) {
-        Venta v=new Venta();
-        v=repoVenta.findById(id).get();
-        if(v!=null)return v;
-        else return new Venta();    
+        return repoVenta.findById(id).get();
     }
 
     //4. Actualizar

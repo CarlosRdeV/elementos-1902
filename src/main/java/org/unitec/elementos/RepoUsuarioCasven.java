@@ -5,12 +5,14 @@
  */
 package org.unitec.elementos;
 
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
  * @author CarlosRdeV
  */
-public interface RepoUsuarioCasven extends MongoRepository<UsuarioCasven,String>{
-    
+public interface RepoUsuarioCasven extends MongoRepository<UsuarioCasven, String> {
+
+    List<UsuarioCasven> findByNombreAndPassword(String nombre, String password);
 }

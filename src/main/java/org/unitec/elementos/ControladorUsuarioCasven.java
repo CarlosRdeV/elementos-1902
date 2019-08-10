@@ -49,14 +49,7 @@ public class ControladorUsuarioCasven {
     //3. Buscar por id
     @GetMapping("/buscar/{id}")
     UsuarioCasven buscarPorId(@PathVariable String id) {
-        UsuarioCasven u=new UsuarioCasven();
-        u=repoU.findById(id).get();
-        if(u!=null){
-            return u;
-        }else{
-            UsuarioCasven a = new UsuarioCasven();
-            return a;
-        }
+        return repoU.findById(id).get();
     }
 
     //4. Actualizar
@@ -75,6 +68,12 @@ public class ControladorUsuarioCasven {
         repoU.deleteById(id);
         Estatus e = new Estatus("Usuario Borrada", true);
         return e;
+    }
+    
+        //7. Buscar por id_articulo y tienda
+    @GetMapping("/buscar/{nombre}/{password}")
+    List<UsuarioCasven> buscarPorNombreAndPassword(@PathVariable String nombre, @PathVariable String password){
+        return repoU.findByNombreAndPassword(nombre, password);
     }
 
     
