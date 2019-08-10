@@ -50,7 +50,7 @@ public class ControladorAlmacen {
     }
 
     //4. Actualizar
-    @PutMapping("/actualizar/{id}")
+    @PutMapping("/actualizar/")
     Estatus actualizar(@RequestBody String json) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         Almacen a = mapper.readValue(json, Almacen.class);
