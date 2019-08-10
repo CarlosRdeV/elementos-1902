@@ -43,8 +43,7 @@ public class ControladorVenta {
         Venta v=new Venta();
         v=repoVenta.findById(id).get();
         if(v!=null)return v;
-        else return new Venta();
-       
+        else return new Venta();    
     }
 
     //4. Actualizar

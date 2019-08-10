@@ -49,7 +49,11 @@ public class ControladorUsuarioCasven {
     //3. Buscar por id
     @GetMapping("/buscar/{id}")
     UsuarioCasven buscarPorId(@PathVariable String id) {
-        return repoU.findById(id).get();
+        
+        UsuarioCasven uc=new UsuarioCasven();
+        uc=repoU.findById(id).get();
+        if(uc!=null)return uc;
+        else return new UsuarioCasven();
     }
 
     //4. Actualizar
