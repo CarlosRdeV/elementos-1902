@@ -51,8 +51,12 @@ public class ControladorUsuarioCasven {
     UsuarioCasven buscarPorId(@PathVariable String id) {
         UsuarioCasven u=new UsuarioCasven();
         u=repoU.findById(id).get();
-        if(u!=null){return u;}
-        else {return new UsuarioCasven();}
+        if(u!=null){
+            return u;
+        }else{
+            UsuarioCasven a = new UsuarioCasven();
+            return a;
+        }
     }
 
     //4. Actualizar
