@@ -66,16 +66,21 @@ public class ControladorAlmacen {
         Estatus e = new Estatus("Articulo en almacen Borrado", true);
         return e;
     }
-    //6. Buscar por id_articulo
+    //5. Buscar por id_articulo
     @GetMapping("/buscararticulo/{idArticulo}")
     List<Almacen> buscarPorArticulo(@PathVariable String idArticulo){
         return repoAlma.findByIdArticulo(idArticulo);
     }
     
-    //7. Buscar por id_articulo y tienda
+    //6. Buscar por id_articulo y tienda
     @GetMapping("/buscararticulos/{idArticulo}/{tienda}")
     List<Almacen> buscarPorArticuloAndTienda(@PathVariable String idArticulo, @PathVariable String tienda){
         return repoAlma.findByIdArticuloAndTienda(idArticulo, tienda);
     }
     
+    //7. Buscar por tienda
+    @GetMapping("/tienda/{tienda}")
+    List<Almacen> buscarPorTienda(@PathVariable String tienda){
+        return repoAlma.findByTienda(tienda);
+    }
 }

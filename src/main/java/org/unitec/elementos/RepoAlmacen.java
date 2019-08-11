@@ -9,6 +9,8 @@ public interface RepoAlmacen extends MongoRepository<Almacen, String>{
 
         List<Almacen>findByIdArticuloAndTienda(String idArticulo, String tienda);
         
+        List<Almacen>findByTienda(String tienda);
+        
    /*
     private String id_almacen;
     private String id_articulo;
