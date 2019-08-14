@@ -54,7 +54,7 @@ public class ControladorArticulo {
     }
 
     //4. Actualizar
-    @PutMapping("/actualizar/{id}")
+    @PutMapping("/actualizar/")
     Estatus actualizar(@RequestBody String json) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         Articulo a = mapper.readValue(json, Articulo.class);
@@ -62,7 +62,7 @@ public class ControladorArticulo {
         Estatus e = new Estatus("Articulo Actualizado", true);
         return e;
     }
-
+    
     //5. Borrar por ID
     @DeleteMapping("/borrar/{id}")
     Estatus borrar(@PathVariable String id) {
